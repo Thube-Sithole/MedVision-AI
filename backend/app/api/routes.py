@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from app.schemas.case import Case
+
+from app.schemas.case_schema import CaseSchema
 from app.services.case_service import CaseService
 
 router = APIRouter()
@@ -14,6 +15,6 @@ def root():
         "status": "running"
     }
 
-@router.post("/cases", response_model=Case)
-def create_case(case: Case):
+@router.post("/cases", response_model=CaseSchema)
+def create_case(case: CaseSchema):
     return case_service.create_case(case)
