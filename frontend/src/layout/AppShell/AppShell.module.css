@@ -1,0 +1,23 @@
+.appShell {
+  display: flex;
+  min-height: 100vh;
+
+  background: var(--surface-alt);
+}
+
+.content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.main {
+  flex: 1;
+
+  padding: var(--space-7);
+
+  overflow-y: auto;
+}

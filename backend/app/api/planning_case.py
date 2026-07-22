@@ -8,11 +8,42 @@ from app.schemas.case_schema import (
     PlanningCaseUpdate,
 )
 
+from fastapi import File, UploadFile
+from pathlib import Path
+import shutil
+
 router = APIRouter(
     prefix="/cases",
     tags=["Planning Cases"],
 )
 
+@router.post("/{case_id}/upload")
+def upload_dicom(
+    case_id: int,
+    files: list[UploadFile] = File(...),
+    db: Session = Depends(get_db),
+):
+
+    case = crud.get_case(db, case_id)
+
+    if not case:
+        raise HTTPException(
+            status_code=404,
+            detail="Planning case not found",
+        )
+
+    dicom_folder = Path(case.dicom_folder) / "dicom"
+
+    for file in files:
+
+        destination = dicom_folder / file.filename
+
+        with destination.open("wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+
+    return {
+        "message": f"{len(files)} DICOM file(s) uploaded successfully."
+    }
 
 @router.post("/", response_model=PlanningCaseUpdate)
 def create_case(

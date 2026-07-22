@@ -1,0 +1,25 @@
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+}
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    font-weight: 600;
+}
+
+.countdown {
+    color: #2563eb;
+    font-weight: 600;
+}

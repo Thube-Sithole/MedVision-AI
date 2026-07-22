@@ -1,0 +1,71 @@
+.viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  background: #d7dfea;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 20px;
+
+  background: white;
+  border-bottom: 1px solid #dbe3ef;
+}
+
+.toolbar button {
+  border: none;
+  background: transparent;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 500;
+}
+
+.toolbar button:hover {
+  background: #eef4fb;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.viewport {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 600px;
+
+  background: #cfd9e8;
+}
+
+.placeholder {
+  text-align: center;
+  color: #4b5563;
+}
+
+.statusbar {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 12px 20px;
+
+  background: white;
+  border-top: 1px solid #dbe3ef;
+
+  font-size: 0.9rem;
+  color: #475569;
+}

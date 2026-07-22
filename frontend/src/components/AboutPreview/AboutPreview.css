@@ -1,0 +1,28 @@
+.aboutPreview {
+  margin: 180px 0;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+}
+
+.aboutPreview h2 {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 500;
+  margin: 0;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.aboutText p {
+  color: var(--color-graphite);
+  line-height: 1.8;
+  margin: 0;
+}

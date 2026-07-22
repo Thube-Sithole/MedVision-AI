@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from sqlalchemy.orm import Session
 
 from app.models.planning_case import PlanningCase
@@ -5,9 +7,22 @@ from app.schemas.case_schema import (
     PlanningCaseCreate,
     PlanningCaseUpdate,
 )
+from app.storage.dicom_storage import DicomStorage
 
 def create_case(db: Session, case: PlanningCaseCreate):
-    db_case = PlanningCase(**case.model_dump())
+
+    storage = DicomStorage()
+
+    workspace = storage.create_case_workspace(
+        case.case_number,
+        datetime.now().year,
+    )
+
+    case_data = case.model_dump()
+
+    case_data["dicom_folder"] = str(workspace)
+
+    db_case = PlanningCase(**case_data)
 
     db.add(db_case)
     db.commit()

@@ -1,0 +1,62 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.backButton {
+  justify-self: start;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #2563eb;
+}
+
+.caseId {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.status {
+  background: #dcfce7;
+  color: #166534;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-areas:
+        "patient viewer"
+        "workflow viewer"
+        "notes viewer";
+    gap: 24px;
+}
+
+.patient {
+  grid-area: patient;
+}
+
+.viewer {
+  grid-area: viewer;
+  height: 100%;
+}
+
+.workflow {
+  grid-area: workflow;
+}
+
+.notes {
+  grid-area: notes;
+}
