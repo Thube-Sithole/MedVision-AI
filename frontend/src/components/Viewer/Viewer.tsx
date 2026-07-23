@@ -1,5 +1,5 @@
 import styles from "./Viewer.module.css";
-import DropZone from "../DropZone";
+import CornerstoneViewport from "../CornerstoneViewport";
 
 export default function Viewer() {
   return (
@@ -17,7 +17,7 @@ export default function Viewer() {
       </header>
 
       <main className={styles.viewport}>
-        <DropZone />
+        <CornerstoneViewport />
       </main>
 
       <footer className={styles.statusbar}>
