@@ -1,28 +1,55 @@
 import { useEffect, useRef } from "react";
 import styles from "./CornerstoneViewport.module.css";
-import { initializeCornerstone } from "../../services/cornerstone";
 
 import {
-  enableViewport,
+  resizeViewport,
+  disableViewport,
 } from "../../services/cornerstone";
+
+import { ImagingService } from "../../services/imaging/ImagingService";
 
 export default function CornerstoneViewport() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    let observer: ResizeObserver | undefined;
+    let initialized = false;
+
     async function initialize() {
-      await initializeCornerstone();
+      if (!viewportRef.current) return;
 
-      if (viewportRef.current) {
-        enableViewport(viewportRef.current);
+      try {
+        await ImagingService.initializeViewport(
+          viewportRef.current
+        );
+
+        initialized = true;
+
+        observer = new ResizeObserver(() => {
+          resizeViewport();
+        });
+
+        observer.observe(viewportRef.current);
+
+        console.log("✅ CornerstoneViewport initialize()");
+        console.log("🩻 Cornerstone viewport ready.");
+      } catch (error) {
+        console.error(
+          "❌ Failed to initialize viewer:",
+          error
+        );
       }
-
-      console.log("🩻 Cornerstone viewport ready.");
-
-      console.log(viewportRef.current);
     }
 
     initialize();
+
+    return () => {
+      observer?.disconnect();
+
+      if (initialized) {
+        disableViewport();
+      }
+    };
   }, []);
 
   return (

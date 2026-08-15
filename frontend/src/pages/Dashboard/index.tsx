@@ -16,6 +16,8 @@ import {
   FolderOpen,
 } from "lucide-react";
 
+import CornerstoneViewport from "../../components/CornerstoneViewport/CornerstoneViewport";
+
 function Dashboard() {
   return (
     <div className={styles.page}>
@@ -39,6 +41,10 @@ function Dashboard() {
           value={8}
           subtitle="Ready"
         />
+
+        <SectionCard title="CT Viewer">
+        <CornerstoneViewport />
+        </SectionCard>
 
         <StatCard
           title="Completed"
