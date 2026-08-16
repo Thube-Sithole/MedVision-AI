@@ -1,15 +1,13 @@
 import * as cornerstone from "@cornerstonejs/core";
-
-import {
-  RenderingEngine,
-} from "@cornerstonejs/core";
+import { RenderingEngine } from "@cornerstonejs/core";
 
 import {
   RENDERING_ENGINE_ID,
-  VIEWPORT_ID,
 } from "./constants";
 
 import { initializeDicomLoader } from "../imaging/dicomLoader";
+
+import { init as cornerstoneToolsInit } from "@cornerstonejs/tools";
 
 let initialized = false;
 let renderingEngine: RenderingEngine | null = null;
@@ -21,10 +19,18 @@ export async function initializeCornerstone() {
 
   console.log("🩻 Initializing Cornerstone3D...");
 
+  // Initialize Cornerstone core
   await cornerstone.init();
 
+  // Initialize Cornerstone Tools
+  cornerstoneToolsInit();
+
+  console.log("🛠️ Cornerstone Tools initialized");
+
+  // Initialize DICOM loader
   initializeDicomLoader();
 
+  // Create rendering engine
   getRenderingEngine();
 
   initialized = true;

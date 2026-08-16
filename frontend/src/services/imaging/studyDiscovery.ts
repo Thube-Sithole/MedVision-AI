@@ -62,16 +62,29 @@ export async function getStudyImageIds(): Promise<string[]> {
 
   const grouped = groupBySeries(instances);
 
-  console.log(
-    `🩻 Found ${grouped.length} series`
-  );
+console.log(
+  `🩻 Found ${grouped.length} series`
+);
 
-  // Select the series containing the most instances.
-  // For this CT demo, this should normally be the
-  // main axial CT image series.
-  const series = grouped.sort(
-    (a, b) => b.length - a.length
-  )[0];
+grouped.forEach((series, index) => {
+  console.log(`📦 SERIES ${index + 1}`, {
+    numberOfImages: series.length,
+    seriesInstanceUID: series[0]?.series_instance_uid,
+    firstInstanceNumber: series[0]?.instance_number,
+    lastInstanceNumber:
+      series[series.length - 1]?.instance_number,
+  });
+});
+
+// Select the series containing the most instances.
+const series = [...grouped].sort(
+  (a, b) => b.length - a.length
+)[0];
+
+console.log("🎯 SELECTED SERIES:", {
+  numberOfImages: series.length,
+  seriesInstanceUID: series[0]?.series_instance_uid,
+});
 
   console.log(
     `🩻 Selected series with ${series.length} images`

@@ -17,6 +17,10 @@ export async function loadStack(
 
     console.log("✅ setStack succeeded");
 
+    viewport.resetCamera();
+
+    console.log("✅ Camera reset");
+
     viewport.render();
 
     console.log("✅ Stack rendered");
