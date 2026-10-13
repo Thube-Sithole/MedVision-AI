@@ -1,0 +1,744 @@
+
+.page {
+  min-height: 100vh;
+  background: #f3f5f7;
+  color: #17212e;
+  font-family: Inter, "Segoe UI", sans-serif;
+}
+
+.header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 5%;
+  background: #fff;
+  border-bottom: 1px solid #dce2e8;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brandIcon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: #bcefe5;
+  background: #172b3c;
+  border-radius: 7px;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+
+.brand small {
+  margin-top: 4px;
+  color: #697786;
+  font-size: 11px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navigation a {
+  color: #536171;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: #087f79;
+}
+
+.headerAction,
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.headerAction,
+.primaryAction {
+  color: #fff;
+  background: #173347;
+}
+
+.headerAction:hover,
+.primaryAction:hover {
+  background: #24516a;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: 6%;
+  padding: 88px 7% 96px;
+  background: #fff;
+  border-bottom: 1px solid #dce2e8;
+}
+
+.heroContent {
+  max-width: 620px;
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: #087f79;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #17212e;
+  font-size: clamp(36px, 4.4vw, 60px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.intro {
+  max-width: 490px;
+  margin: 24px 0 0;
+  color: #637181;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.secondaryAction {
+  color: #344557;
+  background: #fff;
+  border: 1px solid #d2dae2;
+}
+
+.secondaryAction:hover {
+  background: #f3f6f8;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: #758291;
+  font-size: 11px;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  background: #b58a36;
+  border-radius: 50%;
+}
+
+.heroVisual {
+  --scan-bg: #101d2a;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #d5e2ed;
+  background: var(--scan-bg);
+  border: 1px solid #304656;
+  border-radius: 7px;
+  box-shadow: 0 24px 60px rgb(17 34 48 / 12%);
+}
+
+.visualHeader {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px;
+  border-bottom: 1px solid #2b3e4d;
+}
+
+.visualTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.liveIndicator {
+  width: 7px;
+  height: 7px;
+  background: #5eead4;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgb(94 234 212 / 35%);
+}
+
+.visualIndex {
+  color: #8297a7;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.imagingStage {
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(rgb(107 146 163 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(107 146 163 / 4%) 1px, transparent 1px),
+    radial-gradient(ellipse at center, #203747 0%, #152837 43%, #101d2a 78%);
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+.viewportLabel,
+.scanScale {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #a5bbc7;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+}
+
+.viewportLabel {
+  top: 17px;
+  right: 18px;
+  left: 18px;
+}
+
+.scanScale {
+  right: 18px;
+  bottom: 15px;
+  left: 18px;
+  color: #7e98a8;
+  font-size: 8px;
+}
+
+.anatomy {
+  display: block;
+  width: min(100%, 460px);
+  height: auto;
+  max-height: 350px;
+}
+
+.visualFooter {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 18px;
+  border-top: 1px solid #2b3e4d;
+}
+
+.visualFooter > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footerLabel {
+  color: #8297a7;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.visualFooter strong {
+  color: #e1eaf0;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.previewBadge {
+  padding: 6px 8px;
+  color: #8ee6d8;
+  background: rgb(94 234 212 / 8%);
+  border: 1px solid rgb(94 234 212 / 22%);
+  border-radius: 3px;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Clinical workflow */
+
+.workflowSection {
+  padding: 88px 7% 90px;
+  background: #f3f5f7;
+  border-bottom: 1px solid #dce2e8;
+}
+
+.sectionHeading {
+  max-width: 650px;
+}
+
+.sectionHeading h2,
+.calloutContent h2 {
+  margin: 0;
+  color: #17212e;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.sectionHeading > p:last-child {
+  max-width: 570px;
+  margin-top: 16px;
+  color: #657383;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.workflowTrack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.workflowCard {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #dce2e8;
+  border-radius: 6px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.workflowCard:hover {
+  border-color: #a9c5ca;
+  box-shadow: 0 10px 28px rgb(23 43 60 / 6%);
+  transform: translateY(-2px);
+}
+
+.workflowCardActive {
+  border-top: 3px solid #087f79;
+  padding-top: 22px;
+}
+
+.workflowCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stageNumber {
+  color: #087f79;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stageStatus {
+  padding: 5px 7px;
+  color: #667585;
+  background: #edf0f3;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.stageStatusActive {
+  color: #08746d;
+  background: #e1f4ef;
+}
+
+.stageIcon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-top: 28px;
+  color: #087f79;
+  background: #e8f3f2;
+  border: 1px solid #d4e9e6;
+  border-radius: 5px;
+}
+
+.workflowCard h3 {
+  margin: 20px 0 0;
+  color: #17212e;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.stageDescription {
+  min-height: 76px;
+  margin: 12px 0 0;
+  color: #657383;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.stageDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0 24px;
+  padding: 18px 0 0;
+  list-style: none;
+  border-top: 1px solid #e5e9ed;
+}
+
+.stageDetails li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #465667;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.stageDetails svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #087f79;
+}
+
+.stageAction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+  color: #173f52;
+  border-top: 1px solid #e5e9ed;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.stageAction:hover {
+  color: #087f79;
+}
+
+.workflowConnector {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -27px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: #087f79;
+  background: #f3f5f7;
+  border: 1px solid #dce2e8;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.workflowNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px 18px;
+  color: #526474;
+  background: #e9eef2;
+  border: 1px solid #dce3e9;
+  border-radius: 5px;
+}
+
+.workflowNote svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #087f79;
+}
+
+.workflowNote p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Platform capabilities */
+
+.capabilities {
+  padding: 82px 7% 90px;
+  background: #fff;
+  border-bottom: 1px solid #dce2e8;
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.capability {
+  padding: 25px;
+  background: #f8fafb;
+  border: 1px solid #dce2e8;
+  border-radius: 6px;
+}
+
+.capability > svg {
+  color: #087f79;
+}
+
+.capability h3 {
+  margin: 22px 0 10px;
+  color: #17212e;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.capability p {
+  margin: 0;
+  color: #657383;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Workspace call to action */
+
+.workspaceCallout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 48px 7%;
+  padding: 30px;
+  background: #eaf0f3;
+  border: 1px solid #d6e0e6;
+  border-radius: 7px;
+}
+
+.calloutIcon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #5eead4;
+  background: #173347;
+  border-radius: 6px;
+}
+
+.calloutContent {
+  flex: 1;
+}
+
+.calloutContent .eyebrow {
+  margin-bottom: 10px;
+}
+
+.calloutContent h2 {
+  font-size: clamp(21px, 2.5vw, 28px);
+}
+
+.calloutContent > p:last-child {
+  margin: 10px 0 0;
+  color: #657383;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.workspaceCallout .primaryAction {
+  flex-shrink: 0;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 7%;
+  color: #687786;
+  background: #fff;
+  border-top: 1px solid #dce2e8;
+  font-size: 11px;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 1050px) {
+  .workflowTrack {
+    gap: 12px;
+  }
+
+  .workflowCard {
+    padding: 20px;
+  }
+
+  .workflowConnector {
+    right: -23px;
+  }
+
+  .stageStatus {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navigation {
+    gap: 14px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .heroVisual {
+    width: 100%;
+  }
+
+  .workflowTrack {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .workflowConnector {
+    top: auto;
+    right: auto;
+    bottom: -26px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .stageDescription {
+    min-height: 0;
+  }
+
+  .workflowCard {
+    padding: 24px;
+  }
+
+  .workflowCardActive {
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .workspaceCallout {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 32px 6%;
+    padding: 22px;
+  }
+
+  .calloutContent {
+    flex-basis: calc(100% - 80px);
+  }
+
+  .workspaceCallout .primaryAction {
+    width: 100%;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 16px 5%;
+  }
+
+  .navigation {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px solid #e3e8ed;
+  }
+
+  .headerAction {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .imagingStage {
+    min-height: 280px;
+  }
+
+  .visualFooter {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .visualFooter > div {
+    min-width: 120px;
+  }
+
+  .workflowSection,
+  .capabilities {
+    padding: 58px 6%;
+  }
+
+  .workflowCard {
+    padding: 20px;
+  }
+
+  .workflowCardActive {
+    padding-top: 18px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
